@@ -1,14 +1,38 @@
-import type { ReactNode } from "react";
+import * as React from "react";
+import { cn } from "@shared/utils/cn";
 
-
-export function Card({ children }: { children: ReactNode }) {
+export function Card({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) {
   return (
-    <div className="bg-white rounded-xl shadow p-4">
-      {children}
-    </div>
+    <div
+      className={cn("rounded-lg border bg-white text-slate-900 shadow-sm", className)}
+      {...props}
+    />
   );
 }
 
-export function CardContent({ children }: { children: ReactNode }) {
-  return <div className="text-sm text-slate-700">{children}</div>;
+export function CardHeader({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) {
+  return (
+    <div
+      className={cn("p-4 border-b", className)}
+      {...props}
+    />
+  );
+}
+
+export function CardContent({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) {
+  return (
+    <div
+      className={cn("p-4", className)}
+      {...props}
+    />
+  );
+}
+
+export function CardFooter({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) {
+  return (
+    <div
+      className={cn("p-4 border-t", className)}
+      {...props}
+    />
+  );
 }

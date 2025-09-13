@@ -9,8 +9,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#2563eb",  // xanh chủ đạo
-        secondary: "#f97316", // cam chủ đạo
+        primary: {
+          DEFAULT: "#2563eb", // blue-600
+          foreground: "#ffffff",
+        },
+        secondary: "#111827",
       },
     },
   },
